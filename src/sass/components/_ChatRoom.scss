@@ -1,0 +1,110 @@
+.wrapper {
+  @include flex(center);
+
+  width: 100%;
+  height: 100vh;
+}
+
+.chatRoom {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 5px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+
+  &__header {
+    @include outline(red);
+
+    @include flex(flex-start, center);
+
+    position: relative;
+    height: 60px;
+    padding: 0 10px;
+    color: #ffffff;
+    background: #5fb548cf;
+
+    .title {
+      margin-left: 16px;
+    }
+
+    .fixIcon {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+  }
+
+  &__body {
+    @include outline(green);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 500px;
+    padding: 10px 0;
+    background-color: #ffffff;
+
+    .messageBox {
+      padding: 8px;
+
+      + .messageBox {
+        margin-top: 16px;
+      }
+
+      &__avatar {
+        @include size(40px);
+
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: top;
+        border-radius: 50%;
+      }
+
+      &__content {
+        @include flex(flex-start);
+        // display: inline-block;
+        // max-width: 70%;
+
+        // vertical-align: bottom;
+
+        &.self {
+          display: flex;
+          flex-direction: row-reverse;
+          max-width: 100%;
+          margin-right: 8px;
+        }
+
+        &__message {
+          max-width: 70%;
+          margin: 5px 0 5px 5px;
+          padding: 8px;
+          text-align: left;
+          // white-space: pre-line;
+          letter-spacing: .6px;
+          word-break: break-all;
+          color: #35393d;
+          border-radius: 12px;
+          background-color: #e3e8eb;
+          // font-size: 12px;
+          line-height: 1.5;
+        }
+
+        &__image img {
+          max-width: 100%;
+          max-height: 250px;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    @include outline(blue);
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      resize: none;
+      border: none;
+      outline: none;
+    }
+  }
+}

@@ -21,6 +21,7 @@ import store from './store';
 Vue.use(VueAxios, axios);
 Vue.use(Vuex);
 Vue.use(ElementUI);
+Vue.use(require('vue-moment'));
 
 fontawesome.library.add(faStar, faSearch, faGithub);
 

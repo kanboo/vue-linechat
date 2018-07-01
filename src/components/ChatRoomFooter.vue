@@ -18,7 +18,7 @@
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 
 export default {
-  name: 'IndexFooter',
+  name: 'ChatRoomFooter',
   components: {
     FontAwesomeIcon
   },
